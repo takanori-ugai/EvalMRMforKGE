@@ -1,0 +1,9 @@
+8
+<http://oekg.l3s.uni-hannover.de/schema/hasLanguageSpecificRelationScore>	0
+<http://oekg.l3s.uni-hannover.de/schema/source>	1
+<http://oekg.l3s.uni-hannover.de/schema/target>	2
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	3
+<http://www.w3.org/2002/07/owl#subClassOf>	4
+<http://www.w3.org/2000/01/rdf-schema#domain>	5
+<http://www.w3.org/2000/01/rdf-schema#range>	6
+<http://www.w3.org/2002/07/owl#subPropertyOf>	7
