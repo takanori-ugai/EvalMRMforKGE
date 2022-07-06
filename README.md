@@ -39,7 +39,8 @@ Convert KGRC-RDF (Event-centric model) to RDF-star
 java -jar MRMConverter/MRMConverter.jar ../kgrc_all.nt 0
 ```
 
-Convert KGRC-RDF (Event-centric model) to RDF-star+ID (distinguish same quoted triples that occur in different contexts)
+Convert KGRC-RDF (Event-centric model) to RDF-star+ID
+RDF-star+ID distinguishes same quoted triples that occur in different contexts)
 ```bash
 java -jar MRMConverter/MRMConverter.jar ../kgrc_all.nt 1
 ```
