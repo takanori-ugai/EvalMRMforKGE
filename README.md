@@ -15,7 +15,7 @@ cd openke
 ```bash
 bash make.sh
 ```	
-4. Quick Start
+4. Quick Start  
 [KGRC-RDF](https://github.com/KnowledgeGraphJapan/KGRC-RDF/tree/master/2020v2)
 ```bash
 python train_transe_KGRC.py
