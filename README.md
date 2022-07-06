@@ -32,7 +32,7 @@ RDF-star+ID representation of KGRC-RDF
 python train_transe_KGRC_RDF-star-ext.py
 python train_transh_KGRC_RDF-star-ext.py
 ```
-## 
+## Preprocess 
 
 ## Data
 
