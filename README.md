@@ -16,9 +16,23 @@ cd openke
 bash make.sh
 ```	
 4. Quick Start
+[KGRC-RDF](https://github.com/KnowledgeGraphJapan/KGRC-RDF/tree/master/2020v2)
 ```bash
-python train_transe_kgrc.py
+python train_transe_KGRC.py
+python train_transh_KGRC.py
 ```
+RDF-star representation of KGRC-RDF
+```bash
+python train_transe_KGRC_RDF-star.py
+python train_transh_KGRC_RDF-star.py
+```
+RDF-star+ID representation of KGRC-RDF
+```bash
+python train_transe_KGRC_RDF-star-ext.py
+python train_transh_KGRC_RDF-star-ext.py
+```
+## 
+
 ## Data
 
 ## To do
