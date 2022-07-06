@@ -36,14 +36,17 @@ python train_transh_KGRC_RDF-star-ext.py
 
 Convert KGRC-RDF (Event-centric model) to RDF-star
 ```bash
-java -jar MRMConverter/MRMConverter.jar ../kgrc_all.nt 0
+cd MRMConverter
+java -jar MRMConverter.jar ../kgrc_all.nt 0
 ```
+rdf-star.ttl is generated.
 
-Convert KGRC-RDF (Event-centric model) to RDF-star+ID
-RDF-star+ID distinguishes same quoted triples that occur in different contexts)
+Convert KGRC-RDF (Event-centric model) to RDF-star+ID  
+RDF-star+ID distinguishes same quoted triples that occur in different contexts.
 ```bash
-java -jar MRMConverter/MRMConverter.jar ../kgrc_all.nt 1
+java -jar MRMConverter.jar ../kgrc_all.nt 1
 ```
+rdf-star\_ext.ttl is generated.
 
 ## Data
 
