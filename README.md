@@ -34,6 +34,7 @@ python train_transh_KGRC_RDF-star-ext.py
 ```
 ## Preprocess 
 
+1. Prepare ttl files
 Convert KGRC-RDF (Event-centric model) to RDF-star
 ```bash
 cd MRMConverter
@@ -48,9 +49,9 @@ java -jar MRMConverter.jar kgrc_all.nt 1
 ```
 rdf-star\_ext.ttl is generated.  
 
-Load ttl files into a triplestore.  
+2. Load ttl files into a triplestore.  
 
-Get tsv files using the below SPARQL queries.
+3. Get tsv files using the below SPARQL queries.
 
 For Event-centric model:
 ```sql
@@ -64,7 +65,7 @@ WHERE {
 ```
 
 For RDF-star and RDF-star+ID:
-```
+```sql
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 SELECT DISTINCT ?s ?p ?o
 WHERE {{
