@@ -46,7 +46,39 @@ RDF-star+ID distinguishes same quoted triples that occur in different contexts.
 ```bash
 java -jar MRMConverter.jar kgrc_all.nt 1
 ```
-rdf-star\_ext.ttl is generated.
+rdf-star\_ext.ttl is generated.  
+
+Load ttl files into a triplestore.  
+
+Get tsv files using the below SPARQL queries.
+
+For Event-centric model:
+```sql
+PREFIX kgc: <http://kgc.knowledge-graph.jp/ontology/kgc.owl#>
+SELECT DISTINCT ?s ?p ?o
+WHERE {
+  ?s ?p ?o .
+  filter(isURI(?o))
+  BIND(RAND() AS ?sortKey)
+} ORDER BY ?sortKey
+```
+
+For RDF-star and RDF-star+ID:
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?p ?o
+WHERE {{
+        ?s ?p ?o .
+    } union {
+        <<?s ?p ?o>> ?p2 ?o2 .
+        filter(!isLiteral(?o2))
+    } union {
+        << << ?s ?p ?o>> rdf:value ?v >> ?p2 ?o2 .
+        filter(!isLiteral(?o2)) }
+    filter(!isLiteral(?o))
+    BIND(RAND() AS ?sortKey)
+} ORDER BY ?sortKey
+```
 
 ## Data
 
