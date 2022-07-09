@@ -81,6 +81,30 @@ WHERE {{
 } ORDER BY ?sortKey
 ```
 
+4. Create {entity, relation, train, valid, test}2id.txt
+Create directories
+```bash
+mkdir benchmarks/KGRC
+mkdir benchmarks/KGRC-RDF-star
+mkdir benchmarks/KGRC-RDF-star-ext
+mkdir export
+```
+Create id files using [ToolsForFastTransX](https://github.com/KnowledgeGraphJapan/KGRC-Tools/tree/master/ToolsforFastTransX)
+
+```bash
+java -jar URI2ID.jar kgrc_all.tsv 8 1 1
+```
+Locate id files
+```bash
+cp export/*.txt benchmarks/KGRC/
+```
+Create type\_constraint.txt
+```bash
+cp benchmarks/FB15K/n-n.py benchmarks/KGRC/
+cd benchmarks/KGRC
+python n-n.py
+```
+
 ## Data
 
 ## To do
