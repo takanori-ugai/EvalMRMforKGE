@@ -1,5 +1,5 @@
 # EvalMRMforKGE
-TBW  
+Evaluation codes for metadata representation models in event-centric knowledge graph embedding  
 
 ## Installation
 
