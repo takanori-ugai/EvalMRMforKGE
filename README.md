@@ -32,6 +32,11 @@ RDF-star+ID representation of KGRC-RDF
 python train_transe_KGRC_RDF-star-ext.py
 python train_transh_KGRC_RDF-star-ext.py
 ```
+
+## Data
+[KGRC-RDF](https://github.com/KnowledgeGraphJapan/KGRC-RDF/tree/master/2020v2)  
+Please see [Report on the First Knowledge Graph Reasoning Challenge 2018](https://link.springer.com/chapter/10.1007/978-3-030-41407-8_2) and [International Knowledge Graph Reasoning Challenge](https://ikgrc.org/).
+
 ## Preprocess 
 
 1. Prepare ttl files
@@ -104,8 +109,5 @@ cp benchmarks/FB15K/n-n.py benchmarks/KGRC/
 cd benchmarks/KGRC
 python n-n.py
 ```
-
-## Data
-
-## To do
-
+## Publications
+under submission
