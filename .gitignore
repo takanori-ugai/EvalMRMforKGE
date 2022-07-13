@@ -139,8 +139,4 @@ venv.bak/
 # embedding
 visualization/*
 
-# no rdf:type
-kgrc_all_noType.tsv
-kgrc_all_noType_rdf-star.tsv
-kgrc_all_noType_rdf-star-ext.tsv
 .DS_Store
