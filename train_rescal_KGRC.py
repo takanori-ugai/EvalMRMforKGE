@@ -34,11 +34,11 @@ model = NegativeSampling(
 )
 
 # train the model
-trainer = Trainer(model = model, data_loader = train_dataloader, train_times = 1000, alpha = 0.1, use_gpu = False)
+trainer = Trainer(model = model, data_loader = train_dataloader, train_times = 1000, alpha = 0.1, use_gpu = True)
 trainer.run()
 transd.save_checkpoint('./checkpoint/rascal_kgrc.ckpt')
 
 # test the model
 transd.load_checkpoint('./checkpoint/rascal_kgrc.ckpt')
-tester = Tester(model = transd, data_loader = test_dataloader, use_gpu = False)
+tester = Tester(model = rescal, data_loader = test_dataloader, use_gpu = True)
 tester.run_link_prediction(type_constrain = True)
