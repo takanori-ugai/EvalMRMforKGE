@@ -7,7 +7,7 @@ from openke.data import TrainDataLoader, TestDataLoader
 
 # dataloader for training
 train_dataloader = TrainDataLoader(
-	in_path = "./benchmarks/SPO/", 
+	in_path = "./benchmarks/SPO2/", 
 	nbatches = 100,
 	threads = 8, 
 	sampling_mode = "normal", 
@@ -17,7 +17,7 @@ train_dataloader = TrainDataLoader(
 	neg_rel = 0)
 
 # dataloader for test
-test_dataloader = TestDataLoader("./benchmarks/SPO/", "link")
+test_dataloader = TestDataLoader("./benchmarks/SPO2/", "link")
 
 # define the model
 transe = TransE(
@@ -38,9 +38,9 @@ model = NegativeSampling(
 # train the model
 trainer = Trainer(model = model, data_loader = train_dataloader, train_times = 1000, alpha = 1.0, use_gpu = False)
 trainer.run()
-transe.save_checkpoint('./checkpoint/transe_SPO.ckpt')
+transe.save_checkpoint('./checkpoint/transe_SPO2.ckpt')
 
 # test the model
-transe.load_checkpoint('./checkpoint/transe_SPO.ckpt')
+transe.load_checkpoint('./checkpoint/transe_SPO2.ckpt')
 tester = Tester(model = transe, data_loader = test_dataloader, use_gpu = False)
 tester.run_link_prediction(type_constrain = True)

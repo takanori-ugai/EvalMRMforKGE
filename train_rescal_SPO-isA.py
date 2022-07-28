@@ -1,13 +1,13 @@
 import openke
 from openke.config import Trainer, Tester
-from openke.module.model import TransD
+from openke.module.model import RESCAL
 from openke.module.loss import MarginLoss
 from openke.module.strategy import NegativeSampling
 from openke.data import TrainDataLoader, TestDataLoader
 
 # dataloader for training
 train_dataloader = TrainDataLoader(
-	in_path = "./benchmarks/KGRC/", 
+	in_path = "./benchmarks/SPO-isA/", 
 	nbatches = 100,
 	threads = 8, 
 	sampling_mode = "normal", 
@@ -17,31 +17,28 @@ train_dataloader = TrainDataLoader(
 	neg_rel = 0)
 
 # dataloader for test
-test_dataloader = TestDataLoader("./benchmarks/KGRC/", "link")
+test_dataloader = TestDataLoader("./benchmarks/SPO-isA/", "link")
 
 # define the model
-transd = TransD(
+rescal = RESCAL(
 	ent_tot = train_dataloader.get_ent_tot(),
 	rel_tot = train_dataloader.get_rel_tot(),
-	dim_e = 200, 
-	dim_r = 200, 
-	p_norm = 1, 
-	norm_flag = True)
+	dim = 50)
 
 
 # define the loss function
 model = NegativeSampling(
-	model = transd, 
-	loss = MarginLoss(margin = 4.0),
+	model = rescal, 
+	loss = MarginLoss(margin = 1.0),
 	batch_size = train_dataloader.get_batch_size()
 )
 
 # train the model
-trainer = Trainer(model = model, data_loader = train_dataloader, train_times = 1000, alpha = 1.0, use_gpu = False)
+trainer = Trainer(model = model, data_loader = train_dataloader, train_times = 1000, alpha = 0.1, use_gpu = False)
 trainer.run()
-transd.save_checkpoint('./checkpoint/transd_kgrc.ckpt')
+transd.save_checkpoint('./checkpoint/rescal_spo_isA.ckpt')
 
 # test the model
-transd.load_checkpoint('./checkpoint/transd_kgrc.ckpt')
+transd.load_checkpoint('./checkpoint/rescal_spo_isA.ckpt')
 tester = Tester(model = transd, data_loader = test_dataloader, use_gpu = False)
 tester.run_link_prediction(type_constrain = True)
