@@ -44,5 +44,5 @@ transd.save_checkpoint('./checkpoint/rotate_spo_isA.ckpt')
 
 # test the model
 transd.load_checkpoint('./checkpoint/rorate_spo_isA.ckpt')
-tester = Tester(model = transd, data_loader = test_dataloader, use_gpu = False)
+tester = Tester(model = rescal, data_loader = test_dataloader, use_gpu = False)
 tester.run_link_prediction(type_constrain = True)
