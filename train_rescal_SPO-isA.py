@@ -36,9 +36,9 @@ model = NegativeSampling(
 # train the model
 trainer = Trainer(model = model, data_loader = train_dataloader, train_times = 1000, alpha = 0.1, use_gpu = False)
 trainer.run()
-transd.save_checkpoint('./checkpoint/rescal_spo_isA.ckpt')
+rescal.save_checkpoint('./checkpoint/rescal_spo_isA.ckpt')
 
 # test the model
-transd.load_checkpoint('./checkpoint/rescal_spo_isA.ckpt')
+rescal.load_checkpoint('./checkpoint/rescal_spo_isA.ckpt')
 tester = Tester(model = rescal, data_loader = test_dataloader, use_gpu = False)
 tester.run_link_prediction(type_constrain = True)
