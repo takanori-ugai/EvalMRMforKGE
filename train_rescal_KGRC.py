@@ -20,7 +20,7 @@ train_dataloader = TrainDataLoader(
 test_dataloader = TestDataLoader("./benchmarks/KGRC/", "link")
 
 # define the model
-rescal = RESCAL(
+transd = RESCAL(
 	ent_tot = train_dataloader.get_ent_tot(),
 	rel_tot = train_dataloader.get_rel_tot(),
 	dim = 50)
@@ -28,17 +28,17 @@ rescal = RESCAL(
 
 # define the loss function
 model = NegativeSampling(
-	model = rescal, 
+	model = transd, 
 	loss = MarginLoss(margin = 1.0),
 	batch_size = train_dataloader.get_batch_size()
 )
 
 # train the model
-trainer = Trainer(model = model, data_loader = train_dataloader, train_times = 1000, alpha = 0.1, use_gpu = False)
+trainer = Trainer(model = model, data_loader = train_dataloader, train_times = 1000, alpha = 0.1, use_gpu = True)
 trainer.run()
-rescal.save_checkpoint('./checkpoint/rascal_kgrc.ckpt')
+transd.save_checkpoint('./checkpoint/rascal_kgrc.ckpt')
 
 # test the model
-rescal.load_checkpoint('./checkpoint/rascal_kgrc.ckpt')
-tester = Tester(model = rescal, data_loader = test_dataloader, use_gpu = False)
+transd.load_checkpoint('./checkpoint/rascal_kgrc.ckpt')
+tester = Tester(model = transd, data_loader = test_dataloader, use_gpu = True)
 tester.run_link_prediction(type_constrain = True)
