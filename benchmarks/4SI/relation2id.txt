@@ -1,0 +1,24 @@
+23
+http://example.org/virtualhome2kg/ontology/hasEvent	0
+http://example.org/virtualhome2kg/ontology/virtualHome	1
+http://www.w3.org/1999/02/22-rdf-syntax-ns#type	2
+http://example.org/virtualhome2kg/ontology/attribute	3
+http://example.org/virtualhome2kg/ontology/agent	4
+http://example.org/virtualhome2kg/ontology/action	5
+http://example.org/virtualhome2kg/ontology/mainObject	6
+http://example.org/virtualhome2kg/ontology/nextEvent	7
+http://example.org/virtualhome2kg/ontology/place	8
+http://example.org/virtualhome2kg/ontology/situationAfterEvent	9
+http://example.org/virtualhome2kg/ontology/situationBeforeEvent	10
+http://example.org/virtualhome2kg/ontology/time	11
+http://example.org/virtualhome2kg/ontology/from	12
+http://example.org/virtualhome2kg/ontology/to	13
+http://example.org/virtualhome2kg/ontology/targetObject	14
+http://example.org/virtualhome2kg/ontology/nextSituation	15
+http://example.org/virtualhome2kg/ontology/close	16
+http://example.org/virtualhome2kg/ontology/facing	17
+http://example.org/virtualhome2kg/ontology/inside	18
+http://example.org/virtualhome2kg/ontology/on	19
+http://example.org/virtualhome2kg/ontology/holds_rh	20
+http://example.org/virtualhome2kg/ontology/holds_lh	21
+http://example.org/virtualhome2kg/ontology/sitting	22
